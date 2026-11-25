@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eco-Brew – Zero Waste Coffee</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap">
+<style>
+:root{--bg:#F6F0E4;--surface:#FFFFFF;--soft:#E3EBCF;--ink:#173D2B;--text:#2B3A32;--accent:#6B4632;--leaf:#4C8A3C;--btn-text:#FFFFFF;--line:#d9d2bf;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10201A;--surface:#17302A;--soft:#1F3A2E;--ink:#EAF3DF;--text:#CFDCCB;--accent:#D8B08C;--leaf:#8CC66F;--btn-text:#10201A;--line:#2c4a3d}}
+:root[data-theme="dark"]{--bg:#10201A;--surface:#17302A;--soft:#1F3A2E;--ink:#EAF3DF;--text:#CFDCCB;--accent:#D8B08C;--leaf:#8CC66F;--btn-text:#10201A;--line:#2c4a3d}
+html{scroll-behavior:smooth;scroll-padding-top:90px;height:100%}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1rem/1.65 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background-image:radial-gradient(60rem 30rem at 85% -5%,var(--soft),transparent 70%)}
+h1,h2,h3{color:var(--ink);line-height:1.1;margin:0;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--leaf);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:20;padding:12px 0}
+.bar{display:flex;align-items:center;gap:20px;background:var(--surface);border-radius:999px;padding:10px 12px 10px 22px;box-shadow:0 6px 24px rgba(23,61,43,.10)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.35rem;color:var(--ink)}
+.logo small{display:block;font-size:.62rem;font-weight:500;color:var(--text);margin-top:-4px}
+nav{display:flex;gap:6px;margin-left:auto;margin-right:auto}
+nav a{padding:8px 16px;border-radius:999px;font-weight:500;font-size:.92rem}
+nav a:hover,nav a.on{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);padding:12px 24px;border-radius:999px;font-weight:700;font-size:.95rem;border:2px solid var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(23,61,43,.25)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:20px;align-items:center;padding:48px 0 32px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--soft);color:var(--ink);font-weight:700;font-size:.85rem;padding:7px 16px;border-radius:999px}
+h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800;margin:20px 0 18px}
+h1 span{display:inline-block;border-bottom:5px solid var(--leaf);border-radius:0 0 40px 40px}
+.hero p{max-width:34em;font-size:1.08rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.stage{position:relative}
+.stage svg{width:100%;height:auto;display:block;overflow:visible}
+.bubble{position:absolute;right:0;top:-6px;background:var(--surface);border-radius:50%;width:112px;height:112px;display:grid;place-items:center;text-align:center;font-weight:800;color:var(--ink);box-shadow:0 8px 24px rgba(23,61,43,.15);line-height:1.15;font-size:1.3rem}
+.bubble small{display:block;font-size:.72rem;font-weight:500}
+.steam{animation:rise 4s ease-in-out infinite}
+@keyframes rise{0%,100%{transform:translateY(0);opacity:.7}50%{transform:translateY(-10px);opacity:.25}}
+@media (prefers-reduced-motion:reduce){.steam{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border-radius:36px;padding:26px 10px;box-shadow:0 6px 24px rgba(23,61,43,.08);margin:12px 0 72px}
+.feat div{display:flex;gap:16px;align-items:center;padding:0 24px}
+.feat div+div{border-left:1px solid var(--line)}
+.ic{flex:none;width:58px;height:58px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.ic svg{width:28px;height:28px;stroke:var(--btn-text);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.feat b{display:block;color:var(--ink);font-size:1.05rem}
+.feat span{font-size:.88rem;line-height:1.4;display:block}
+section{padding:36px 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.photo{border-radius:28px;aspect-ratio:4/3;background:radial-gradient(circle at 30% 30%,#8a5a3c,#3b2418);position:relative;overflow:hidden}
+.photo svg{position:absolute;inset:0;width:100%;height:100%}
+h2{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:800;margin:16px 0}
+.impact{background:var(--soft);border-radius:32px;padding:30px;margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.impact b{display:block;font-size:2.2rem;color:var(--ink);font-weight:800;line-height:1}
+.impact span{font-size:.92rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px;counter-reset:s;padding:0;list-style:none}
+.steps li{background:var(--surface);border-radius:24px;padding:24px;counter-increment:s;box-shadow:0 4px 16px rgba(23,61,43,.06)}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--bg);font-weight:800;margin-bottom:14px}
+.steps b{color:var(--ink);display:block;margin-bottom:4px}
+.contrast{background:var(--ink);color:var(--bg);border-radius:28px;padding:28px;margin-top:20px}
+.contrast h3{color:var(--bg);font-size:1.25rem;margin-bottom:14px}
+.tbl{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:560px;background:var(--surface);color:var(--text);border-radius:14px;overflow:hidden}
+th{background:var(--soft);color:var(--ink);text-align:left;padding:10px 14px;font-size:.9rem}
+td{padding:10px 14px;border-top:1px solid var(--line);font-size:.92rem}
+.ok{color:var(--leaf);font-weight:700}
+details{background:var(--surface);border-radius:20px;padding:18px 24px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;color:var(--ink)}
+details[open] summary{margin-bottom:8px}
+.order{background:var(--ink);border-radius:36px;padding:48px 28px;text-align:center;color:var(--bg);margin:40px 0}
+.order h2{color:var(--bg)}
+.order .btn{background:var(--bg);color:var(--ink);border-color:var(--bg)}
+footer{padding:20px 0 40px;text-align:center;font-size:.88rem}
+@media(max-width:860px){nav{display:none}.bar{justify-content:space-between}.hero,.about{grid-template-columns:1fr}.feat{grid-template-columns:1fr;gap:18px}.feat div+div{border-left:0;border-top:1px solid var(--line);padding-top:18px}.steps{grid-template-columns:1fr 1fr}.impact{grid-template-columns:1fr}.bubble{width:92px;height:92px;font-size:1.05rem}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}.logo small{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="bar">
+<a class="logo" href="#beranda"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><path d="M6 24C6 12 14 5 24 4c1 11-4 20-18 20z" fill="#4C8A3C"/><ellipse cx="24" cy="26" rx="8" ry="11" fill="#6B4632" transform="rotate(25 24 26)"/><path d="M20 18c6 3 4 9 8 14" stroke="#F6F0E4" stroke-width="1.8" fill="none"/></svg><span>Eco-Brew<small>Zero Waste Coffee</small></span></a>
+<nav aria-label="Menu utama"><a class="on" href="#beranda">Beranda</a><a href="#tentang">Tentang Kami</a><a href="#cara">Cara Kerja</a><a href="#dampak">Dampak</a><a href="#faq">FAQ</a><a href="#pesan">Kontak</a></nav>
+<a class="btn" href="#pesan">Pesan Sekarang</a>
+</div></div></header>
+
+<main class="wrap" id="beranda">
+<div class="hero">
+<div>
+<span class="pill">🌿 Zero Waste Coffee</span>
+<h1>Nikmati Kopi, Tanpa Tinggalkan <span>Sampah.</span></h1>
+<p>Kopi sachet praktis dengan kemasan gelatin rumput laut yang larut saat diseduh. Lebih baik untuk rutinitasmu dan lingkungan.</p>
+<div class="cta"><a class="btn" href="#pesan">Lihat Produk</a><a class="btn ghost" href="#cara">Cara Kerja ▸</a></div>
+</div>
+<div class="stage">
+<div class="bubble"><div>100%<small>Eco-Friendly</small></div></div>
+<svg viewBox="0 0 520 440" role="img" aria-label="Kotak Eco-Brew, sachet kopi, dan secangkir kopi di atas talenan kayu">
+<ellipse cx="240" cy="372" rx="230" ry="52" fill="#B27A4F"/><ellipse cx="240" cy="362" rx="222" ry="44" fill="#C99466"/><ellipse cx="240" cy="362" rx="150" ry="26" fill="none" stroke="#A9714A" stroke-width="2"/>
+<path d="M20 330c-20-80 30-140 90-150-10 60-30 110-90 150z" fill="#4C8A3C"/><path d="M470 300c40-60 10-130-50-150-10 60 0 110 50 150z" fill="#3E7A33"/>
+<rect x="180" y="60" width="230" height="270" rx="10" fill="#C29566"/><rect x="180" y="60" width="230" height="40" rx="10" fill="#B58757"/>
+<text x="372" y="92" font-weight="800" font-size="22" fill="#4a2f1d">10</text><text x="340" y="112" font-size="12" fill="#4a2f1d">Sachet</text>
+<path d="M255 190c0-35 25-55 55-58 3 33-12 56-55 58z" fill="#2F6B3A"/><ellipse cx="300" cy="196" rx="17" ry="25" fill="#6B4632" transform="rotate(25 300 196)"/>
+<text x="295" y="258" text-anchor="middle" font-weight="800" font-size="34" fill="#4a2f1d">Eco-Brew</text><text x="295" y="282" text-anchor="middle" font-size="12" fill="#4a2f1d">Good Coffee, Green Future</text>
+<g transform="rotate(-8 130 270)"><rect x="80" y="190" width="105" height="150" rx="6" fill="#EDE3CF" opacity=".92"/><rect x="90" y="215" width="85" height="115" rx="8" fill="#6B4632"/><path d="M100 235l30 14M110 270l40-8M100 300l45 10" stroke="#3b2418" stroke-width="5" stroke-linecap="round"/></g>
+<g fill="#4a2f1d"><ellipse cx="215" cy="352" rx="11" ry="7"/><ellipse cx="240" cy="360" rx="11" ry="7"/><ellipse cx="228" cy="338" rx="11" ry="7"/></g>
+<ellipse cx="430" cy="360" rx="70" ry="18" fill="#A9714A"/>
+<g class="steam" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="5" stroke-linecap="round"><path d="M425 190c-12-20 12-30 0-52"/><path d="M448 192c-12-20 12-30 0-52"/></g>
+<path d="M382 235h96v70c0 24-20 42-48 42s-48-18-48-42z" fill="#fff" fill-opacity=".35" stroke="#fff" stroke-opacity=".7" stroke-width="3"/><path d="M388 250h84v50c0 20-17 34-42 34s-42-14-42-34z" fill="#2a1409"/>
+<path d="M478 250c28-4 30 40-4 44" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="5"/>
+</svg>
+</div>
+</div>
+
+<div class="feat">
+<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 19C4 11 9 5 20 4c1 10-4 16-15 15zM5 19c3-5 6-8 10-10"/></svg></span><p style="margin:0"><b>Kemasan Edible</b><span>Kemasan gelatin alami yang larut saat diseduh.</span></p></div>
+<div><span class="ic"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="6" ry="9" transform="rotate(35 12 12)"/><path d="M8 8c5 1 3 6 8 8"/></svg></span><p style="margin:0"><b>Kopi Lokal Pilihan</b><span>Menggunakan biji kopi lokal berkualitas tinggi.</span></p></div>
+<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><p style="margin:0"><b>Praktis Setiap Saat</b><span>Mudah diseduh di rumah, kantor, atau bepergian.</span></p></div>
+</div>
+
+<section id="tentang"><div class="about">
+<div class="photo" role="img" aria-label="Ilustrasi biji kopi dalam karung goni"><svg viewBox="0 0 400 300"><rect y="200" width="400" height="100" fill="#C9A06C"/><g fill="#5a3825"><ellipse cx="150" cy="190" rx="26" ry="17"/><ellipse cx="200" cy="170" rx="26" ry="17" transform="rotate(30 200 170)"/><ellipse cx="240" cy="200" rx="26" ry="17" transform="rotate(-20 240 200)"/><ellipse cx="180" cy="215" rx="26" ry="17"/><ellipse cx="120" cy="225" rx="26" ry="17" transform="rotate(20 120 225)"/><ellipse cx="270" cy="235" rx="26" ry="17"/></g><g stroke="#2a1409" stroke-width="3" fill="none"><path d="M130 190h40M185 160l30 20M225 195l30 5M160 215h40"/></g></svg></div>
+<div>
+<span class="pill">🌿 Tentang Eco-Brew</span>
+<h2>Kopi Inovatif untuk Masa Depan Bumi</h2>
+<p>Eco-Brew menghadirkan kopi sachet dengan kemasan gelatin rumput laut, solusi praktis untuk pecinta kopi yang peduli lingkungan. Bersama Eco-Brew, kita bisa menikmati kopi enak tanpa menambah sampah plastik.</p>
+<a class="btn" href="#cara" style="margin-top:12px">Pelajari Lebih Lanjut</a>
+</div></div>
+<div class="impact" id="dampak">
+<div><b>100%</b><span>Kemasan larut</span></div>
+<div><b>Zero Waste</b><span>Tanpa sampah plastik</span></div>
+<div><b>Ramah Lingkungan</b><span>Untuk generasi masa depan</span></div>
+</div></section>
+
+<section id="cara">
+<h2>Cara menyeduh Eco-Brew</h2>
+<ol class="steps">
+<li><b>Siapkan cangkir</b>Letakkan satu sachet utuh di dalam cangkir.</li>
+<li><b>Tuang air panas</b>Gunakan air sekitar 200 ml yang baru mendidih.</li>
+<li><b>Aduk perlahan</b>Kemasan gelatin larut bersama kopinya.</li>
+<li><b>Nikmati</b>Tidak ada sampah yang perlu dibuang.</li>
+</ol>
+<div class="contrast"><h3>✔ Hasil Uji Kontras Warna Teks</h3>
+<div class="tbl"><table><thead><tr><th>Kombinasi warna</th><th>Rasio kontras</th><th>Hasil</th></tr></thead><tbody>
+<tr><td>Hijau Tua #173D2B di atas Krem #F6F0E4</td><td>11,2 : 1</td><td class="ok">✔ Lulus AAA</td></tr>
+<tr><td>Putih #FFFFFF di atas Hijau Tua #173D2B</td><td>11,7 : 1</td><td class="ok">✔ Lulus AAA</td></tr>
+<tr><td>Cokelat #6B4632 di atas Krem #F6F0E4</td><td>7,4 : 1</td><td class="ok">✔ Lulus AAA</td></tr>
+</tbody></table></div>
+<p style="margin:14px 0 0;font-size:.92rem">Semua kombinasi warna memenuhi standar kontras WCAG AAA, sehingga teks mudah dibaca di berbagai perangkat.</p></div>
+</section>
+
+<section id="faq">
+<h2 style="margin-bottom:24px">Pertanyaan yang sering diajukan</h2>
+<details><summary>Apakah kemasannya aman diminum?</summary>Kemasan terbuat dari gelatin rumput laut yang larut dalam air panas dan dapat dimakan.</details>
+<details><summary>Berapa isi satu boks?</summary>Satu boks Eco-Brew berisi 10 sachet kopi.</details>
+<details><summary>Bagaimana cara menyimpannya?</summary>Simpan di tempat kering dan sejuk, jauh dari uap air agar kemasan tidak melunak.</details>
+</section>
+
+<div class="order" id="pesan">
+<h2>Siap ngopi tanpa sampah?</h2>
+<p style="max-width:32em;margin:0 auto 24px">Pesan Eco-Brew hari ini dan jadikan setiap seduhan lebih baik untuk bumi.</p>
+<a class="btn" href="mailto:halo@eco-brew.id">Pesan Sekarang</a>
+</div>
+</main>
+<footer>© 2026 Eco-Brew · Good Coffee, Green Future</footer>
+</body>
+</html>
